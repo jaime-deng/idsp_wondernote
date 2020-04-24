@@ -1,0 +1,54 @@
+.Left-Menu {
+    background-color: #F4F4F4;
+    width: 720px;
+    height: 1080px;
+}
+
+.Profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 100px;
+    padding-top: 50px;
+}
+
+.Categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.Category-Expanded {
+    margin-top: 50px;
+}
+
+.Expand-Button {
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+}
+
+.Category-Above {
+    position: relative;
+    z-index: 1000;
+}
+
+.Under-Category {
+    position: absolute;
+    top: 420px;
+}
+
+.Fav-Del {
+    display: flex;
+    justify-content: space-between;
+    margin: 270px 230px 70px;
+}
+
+.Search-Bar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 0px 100px;
+}

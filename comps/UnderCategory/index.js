@@ -2,7 +2,7 @@ import React from 'react';
 import './under.css';
 
 const UnderCategory = ({ text, color, onClick }) => <div
-    style={{ backgroundColor: color, boxShadow: "0 0 6px" + color }}
+    style={{ backgroundColor: color,}}
     className="UnderCategory-Box"
     onClick={onClick}
 >
@@ -17,7 +17,7 @@ const UnderCategory = ({ text, color, onClick }) => <div
         </div>
             </div>
 
-            <div className="Note-Preview">Note preview...</div>
+            <div className="Note-Preview">Note preview text...</div>
         </div>
 
         <div className="Under-Divider"></div>
@@ -32,7 +32,7 @@ const UnderCategory = ({ text, color, onClick }) => <div
         </div>
             </div>
 
-            <div className="Note-Preview">Note preview...</div>
+            <div className="Note-Preview">Note preview text...</div>
         </div>
 
     </div>
