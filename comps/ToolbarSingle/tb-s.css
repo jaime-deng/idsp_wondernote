@@ -1,0 +1,18 @@
+.TBS-Box {
+    height: 60px;
+    width: fit-content;
+    border-radius: 15px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TBS-Inner {
+    cursor: pointer;
+}
+
+.TBS-Inner::selection {
+    background: none;
+    color: none;
+}

@@ -1,0 +1,27 @@
+.TBT-Box {
+    height: 60px;
+    width: fit-content;
+    border-radius: 15px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TBT-Inner {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.TBT-Inner::selection {
+    background: none;
+    color: none;
+}
+
+.TBT-Divider {
+    width: 2px;
+    height: 35px;
+    background-color: #dbdcdd;
+    margin: 0 15px;
+}
