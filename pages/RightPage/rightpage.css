@@ -1,11 +1,8 @@
-body {
-    margin: 0 auto;
-}
-
 .rightpage {
-    background-color: #F4F4F4;
-    width: 2200px;
-    height: 1080px;
+    background-color: #FFFFFF;
+    width: 1150px;
+    height: 980px;
+    padding: 50px;
 }
 
 .toolbar {
@@ -14,3 +11,17 @@ body {
     justify-content: space-between;
 }
 
+.button {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin: 100px;
+}
+
+.text h2 {
+    font-size: 28px;
+}
+
+.text p {
+    font-size: 24px;
+}
