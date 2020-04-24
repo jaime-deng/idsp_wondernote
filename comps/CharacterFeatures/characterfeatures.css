@@ -1,0 +1,27 @@
+.cf-Box {
+    height: 60px;
+    width: fit-content;
+    border-radius: 15px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cf-Inner {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.cf-Inner::selection {
+    background: none;
+    color: none;
+}
+
+.cf-Divider {
+    width: 2px;
+    height: 35px;
+    background-color: #dbdcdd;
+    margin: 0 15px;
+}

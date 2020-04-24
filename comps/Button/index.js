@@ -19,7 +19,7 @@ onClick={onClick}
 
 Button.defaultProps = {
     color: "#73a6fc",
-    img:starImg,
+    img: starImg,
     width: "85px",
     height: "85px"
 }
