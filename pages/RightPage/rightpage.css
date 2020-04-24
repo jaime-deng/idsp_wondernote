@@ -1,0 +1,16 @@
+body {
+    margin: 0 auto;
+}
+
+.rightpage {
+    background-color: #F4F4F4;
+    width: 2200px;
+    height: 1080px;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+

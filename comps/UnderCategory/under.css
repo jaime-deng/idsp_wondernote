@@ -1,0 +1,61 @@
+.UnderCategory-Box {
+    border-radius: 0px 0px 50px 50px;
+    color: #DBDCDD;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 520px;
+    height: 270px;
+    border: 2px #F4F4F4 solid;
+}
+
+.UnderCategory-Box-Inner::selection {
+    background: none;
+    color: color;
+}
+
+.UnderCategory-Box-Inner {
+    margin-top: 50px;
+}
+
+.Under-Divider {
+    position: relative;
+    width: 520px;
+    height: 2px;
+    background-color: #F4F4F4;
+    margin:20px;
+}
+
+.Note {
+    display: flex;
+    align-items: center;
+}
+
+.Note-Date {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin-left: 30px;
+}
+
+.Note-Title {
+    display: flex;
+    justify-content: center;
+    color: #0B0C0C;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.Date-Created {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+
+}
+
+.Note-Preview {
+    display: flex;
+    color: #0B0C0C;
+    font-size: 28px;
+}
