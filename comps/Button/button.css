@@ -1,0 +1,14 @@
+.Btn-Box {
+    border-radius: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85px;
+    height: 85px;
+    cursor: pointer;
+}
+
+.Btn-Icon {
+    width: 45px;
+    height: 45px;
+}

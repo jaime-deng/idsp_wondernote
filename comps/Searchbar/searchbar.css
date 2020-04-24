@@ -1,0 +1,18 @@
+.Searchbar-Box {
+    border-radius: 50px;
+    color: #DBDCDD;
+    font-size: 24px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 50px;
+    width: 400px;
+    height: 85px;
+    border: 2px #F4F4F4 solid;
+}
+
+.Searchbar-Box-Inner::selection {
+    background: none;
+    color: color;
+}

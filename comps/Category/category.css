@@ -1,0 +1,17 @@
+.Category-Box {
+    border-radius: 50px;
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 520px;
+    height: 85px;
+    cursor: pointer;
+}
+
+.Category-Box-Inner::selection {
+    background: none;
+    color: color;
+}
