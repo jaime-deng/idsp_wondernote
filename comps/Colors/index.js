@@ -7,7 +7,7 @@ className="TBS-Box"
 onClick={onClick}
 >
     <div className="TBS-Inner"></div>
-    <div className="text">
+    <div className="TBS-text">
         <p>Apply color to text</p>
         <img src={require('./colors.png')}></img>
     </div>
@@ -17,7 +17,7 @@ colors.defaultProps = {
     color: "#f4f4f4",
     tcolor: "#979797",
     text: "font-size",
-    size: "12px",
+    size: "18px",
 }
 
 export default colors;
