@@ -1,23 +1,33 @@
 if (process.env.NODE_ENV !== "production") {
     require("dotenv").config()
 }
-const express = require("express");
-const app = express();
-const cookieParser = require("cookie-parser");
-const bodyParser = require("body-parser");
-const jwt = require("jsonwebtoken");
-const passport = require("passport")
-const flash = require("express-flash")
+const express = require('express')
+const app = express()
+const bcrypt = require('bcrypt')
+const passport = require('passport')
+const flash = require('express-flash')
 const session = require('express-session')
-const bcrypt = require("bcrypt")
-const users = []
+const methodOverride = require("method-override")
+
 
 module.exports = () => {
-    app.use(express.urlencoded({ extended: false }));
-    app.use(express.json());
-    app.use(cookieParser());
-    app.use(bodyParser.urlencoded({ extended: true }))
-    app.use(bodyParser.json());
+
+    app.use("/styles", express.static(__dirname + "/styles"));
+
+    // // passport
+    const initializePassport = require('./passport-config')
+    initializePassport(
+        passport,
+        email => users.find(user => user.email === email),
+        id => users.find(user => user.id === id)
+    )
+
+
+
+    const users = []
+
+    app.set('view engine', 'ejs')
+    app.use(express.urlencoded({ extended: false }))
     app.use(flash())
     app.use(session({
         secret: process.env.SESSION_SECRET,
@@ -25,65 +35,64 @@ module.exports = () => {
         saveUninitialized: false
     }))
     app.use(passport.initialize())
-    app.use(passport.initialize())
+    app.use(passport.session())
+    app.use(methodOverride('_method'))
 
-    app.use("/styles", express.static(__dirname + "/styles"));
+    app.get('/home', checkAuthenticated, (req, res) => {
+        res.render('home', { name: req.user.name })
+    })
 
-    // passport
-    const initializerPassport = require("./passport-config")
-    initializerPassport(passport, 
-        email => users.find(user => user.email === email)
-    )
+    app.get('/', checkNotAuthenticated, (req, res) => {
+        res.render('login')
+    })
 
-    app.post("/", passport.authenticate("local", {
-        successRedirect: "/home",
-        failureRedirect: "/",
+    app.post('/', checkNotAuthenticated, passport.authenticate('local', {
+        successRedirect: '/home',
+        failureRedirect: '/',
         failureFlash: true
     }))
-    
 
+    app.get('/signup', checkNotAuthenticated, (req, res) => {
+        res.render('signup')
+    })
 
-    app.set('view engine', 'ejs');
-
-    // gets login page
-    const loginRouter = require('./routes/login-route');
-    app.use("/", loginRouter)
-
-    // gets signup page
-    // const users = []
-    const signupRouter = require('./routes/signup-route');
-    app.use(signupRouter)
-    app.post("/signup",
-    // body("confirmPassword").custom((value, { req }) => {
-    //     if (value !== req.body.password) {
-    //         throw new Error("Password confirmation does not match password");
-    //     }
-    
-    //     // Indicates the success of this synchronous custom validator
-    //     return true;
-    // }),
-     async (req, res) => {
+    app.post('/signup', checkNotAuthenticated, async (req, res) => {
         try {
             const hashedPassword = await bcrypt.hash(req.body.password, 10)
-    
             users.push({
                 id: Date.now().toString(),
                 name: req.body.name,
                 email: req.body.email,
                 password: hashedPassword
             })
-            res.redirect("/")
+            res.redirect('/')
         } catch {
-            res.redirect("/signup")
+            res.redirect('/signup')
         }
-        console.log(users)
     })
 
-    
+    app.delete('/logout', (req, res) => {
+        req.logOut()
+        res.redirect('/')
+    })
 
-    // gets home page
-    const indexRouter = require('./routes/index-route');
-    app.use(indexRouter)
+    function checkAuthenticated(req, res, next) {
+        if (req.user) {
+            next();
+        } else {
+            res.redirect('/');
+        }
+    }
 
+    function checkNotAuthenticated(req, res, next) {
+        if (!req.user) {
+            next();
+        } else {
+            res.redirect('/home');
+        }
+    }
+
+
+    // console.log(req.users.name)
     return app;
 }

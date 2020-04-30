@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router()
 const app = express()
-const bcrypt = require("bcrypt")
+// const bcrypt = require("bcrypt")
 // const { body } = require("express-validator");
 app.set('view engine', 'ejs')
 // const users = []
