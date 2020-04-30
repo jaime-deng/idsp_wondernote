@@ -12,7 +12,9 @@
 </head>
 
 <body>
-
+    <% if (messages.error) { %>
+        <%= messages.error %>
+    <% } %>
     <div class="wrapper fadeInDown">
         <div id="formContent">
             <!-- Tabs Titles -->
@@ -29,7 +31,8 @@
 
             <!-- Login Form -->
             <!-- change type = "" to match in css -->
-            <form method="POST" action="login">
+
+            <form method="POST" action="/">
                 <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email" required>
                 <input type="text" id="password" class="fadeIn third" name="password" placeholder="Password" required>
                 <input type="submit" class="fadeIn fourth" value="Log In">
