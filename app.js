@@ -23,10 +23,23 @@ module.exports = () => {
     )
 
 
+    // mongo 
+    const mongoose = require("mongoose")
+    mongoose.connect(process.env.DATABASE_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false
+    })
+    
+    const db = mongoose.connection
+    db.on("error", error => console.error(error))
+    db.once("open", () => console.log("Connected to mongo: " + mongoose.version))
 
+    // app
     const users = []
 
     app.set('view engine', 'ejs')
+    app.set("views", __dirname + "/views")
     app.use(express.urlencoded({ extended: false }))
     app.use(flash())
     app.use(session({
