@@ -1,0 +1,31 @@
+.add-Box {
+    height: 60px;
+    width: fit-content;
+    border-radius: 15px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+}
+
+.add-Inner {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.add-Inner::selection {
+    background: none;
+    color: none;
+}
+
+.add-Divider {
+    width: 2px;
+    height: 35px;
+    background-color: #dbdcdd;
+    margin: 0 15px;
+}
+
+
+

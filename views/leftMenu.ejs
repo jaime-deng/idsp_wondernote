@@ -1,0 +1,102 @@
+<div class="Left-Menu">
+    <div class="Profile">
+
+        <div class="Btn-Box avatar">
+            <div><img class="Btn-Icon" src="/styles/images/user.png" alt="profile-image"></div>
+        </div>
+
+        <div class="header">
+            <h1><%=name%></h1>
+        </div>
+
+    </div>
+    <br>
+    
+    
+
+    <div class="Search-Bar">
+        <!-- <Searchbar /> -->
+
+        <div class="Searchbar-Box">
+            <div class="Searchbar-Box-Inner">
+                <input class="search" type="text" placeholder="Search Notes">
+                <!-- Search -->
+            </div>
+        </div>
+
+        <div class="Btn-Box srch">
+            <div><img class="Btn-Icon" src="/styles/images/search.png"></div>
+        </div>
+    </div>
+
+    <div class="Categories">
+        <!-- <Category /> -->
+        <div class="Category-Box">
+            <div class="Category-Box-Inner">
+                <!-- Reminders -->
+                <div class="Note text">
+                    <div class="Note-Date">
+                        <div class="Note-Title">
+                            Note Title
+                        </div>
+                        <div class="Date-Created">
+                            12.07.2020 - 12:00
+                        </div>
+                    </div>
+
+                    <div class="Note-Preview">Note preview text...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Category-Expanded">
+            <div class="Category-Above">
+                <div class="Category-Box">
+                    <div class="Category-Box-Inner">
+                        <!-- To-do's -->
+                        <div class="Note text">
+                            <div class="Note-Date">
+                                <div class="Note-Title">
+                                    Note Title
+                                </div>
+                                <div class="Date-Created">
+                                    12.07.2020 - 12:00
+                                </div>
+                            </div>
+
+                            <div class="Note-Preview">Note preview text...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="Under-Category"> -->
+            <!-- <UnderCategory /> -->
+            <!-- <%- include('components/notes')%> -->
+            <!-- 
+                <div class="Expand-Button">
+                    <!-- <Expand /> -->
+            <!-- <div class="Btn-Box expand">
+                        <div><img class="Btn-Icon" src="/styles/images/plus.png" alt="star"></div>
+                    </div> -->
+
+            <!-- </div> -->
+            <!-- </div> -->
+        </div>
+    </div>
+    <div class="Fav-Del">
+        <!-- <Favorite /> -->
+        <div class="Btn-Box favourite">
+            <div><img class="Btn-Icon" src="/styles/images/star.png" alt="star"></div>
+        </div>
+        <!-- <Delete /> -->
+        <div class="Btn-Box trash">
+            <div><img class="Btn-Icon" src="/styles/images/trash.png" alt="trash"></div>
+        </div>
+    </div>
+
+    <div class="logout d-flex justify-content-center">
+        <form action="/logout?_method=DELETE" method="POST">
+            <button class="btn btn-primary btn-lg" type="submit">Log Out</button>
+        </form>
+    </div>
+</div>

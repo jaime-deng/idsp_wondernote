@@ -14,6 +14,9 @@ const methodOverride = require("method-override")
 module.exports = () => {
 
     app.use("/styles", express.static(__dirname + "/styles"));
+    app.use("/styles/images", express.static(__dirname + "/styles/images"));
+    app.use("/frontend-js", express.static(__dirname + "/frontend-js"));
+    app.use("/images", express.static(__dirname + "/images"));
 
     // // passport
     const initializePassport = require('./passport-config')
@@ -31,8 +34,6 @@ module.exports = () => {
     //     useUnifiedTopology: true,
     //     useFindAndModify: false
     // })
-
- 
 
     // const db = mongoose.connection
     // db.on("error", error => console.error(error))
@@ -55,7 +56,7 @@ module.exports = () => {
     app.use(methodOverride('_method'))
 
     app.get('/home', checkAuthenticated, (req, res) => {
-        res.render('home', { name: req.user.name })
+        res.render('app', {name: "name"})
     })
 
     app.get('/', checkNotAuthenticated, (req, res) => {
@@ -81,7 +82,7 @@ module.exports = () => {
                 email: req.body.email,
                 password: hashedPassword
             })
-            res.redirect('/')
+            res.redirect('/home')
         } catch {
             res.redirect('/signup')
         }
@@ -92,6 +93,7 @@ module.exports = () => {
         res.redirect('/')
     })
 
+    // checkers
     function checkAuthenticated(req, res, next) {
         if (req.user) {
             next();
@@ -108,7 +110,13 @@ module.exports = () => {
         }
     }
 
+    app.get('/temp', (req, res) => {
+        res.render('app', {name: "Jane"})
+    })
 
+    // app.get('/leftSide', (req, res) => {
+    //     res.render('leftMenu', {name: req.user.name}, {text: "reminders"})
+    // })
     // console.log(req.users.name)
     return app;
 }

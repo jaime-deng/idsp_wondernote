@@ -1,0 +1,30 @@
+.align-Box {
+    height: 60px;
+    width: fit-content;
+    border-radius: 15px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    box-shadow: 0 0 6px #f4f4f4;
+}
+
+.align-Inner {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.align-Inner::selection {
+    background: none;
+    color: none;
+}
+
+.align-Divider {
+    width: 2px;
+    height: 35px;
+    background-color: #dbdcdd;
+    margin: 0 15px;
+}
+
