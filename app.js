@@ -40,7 +40,11 @@ module.exports = () => {
     // db.once("open", () => console.log("Connected to mongo: " + mongoose.version))
 
     // app
-    const users = []
+    const users = [ { id: '1589406325226',
+    name: 'User',
+    email: 'user@gmail.com',
+    password:
+     '$2b$10$HhvTCz9ob8o2SqqAE3ktyufB.AmZMihtAqpXFlP0QAqujFJiNmb4a' }]
 
     app.set('view engine', 'ejs')
     app.set("views", __dirname + "/views")
@@ -83,6 +87,7 @@ module.exports = () => {
                 password: hashedPassword
             })
             res.redirect('/home')
+            // console.log(users)
         } catch {
             res.redirect('/signup')
         }
@@ -110,9 +115,9 @@ module.exports = () => {
         }
     }
 
-    app.get('/temp', (req, res) => {
-        res.render('app', {name: "Jane"})
-    })
+    // app.get('/temp', (req, res) => {
+    //     res.render('app', {name: "Jane"})
+    // })
 
     // app.get('/leftSide', (req, res) => {
     //     res.render('leftMenu', {name: req.user.name}, {text: "reminders"})
