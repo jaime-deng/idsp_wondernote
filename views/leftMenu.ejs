@@ -90,7 +90,7 @@
         </div>
         <!-- <Delete /> -->
         <div class="Btn-Box trash">
-            <div><img class="Btn-Icon" src="/styles/images/trash.png" alt="trash"></div>
+            <div><img class="Btn-Icon" src="/styles/images/trash.png" alt="trash" onclick="eraseText();"></div>
         </div>
     </div>
 
@@ -100,3 +100,15 @@
         </form>
     </div>
 </div>
+
+
+<script>
+     //delete note
+     function eraseText() {
+        document.getElementById("text2").value = "";
+        document.getElementById("text").value = "";
+        document.getElementById('blah').style.display = 'none';
+    }
+
+
+</script>
