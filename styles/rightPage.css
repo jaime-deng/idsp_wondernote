@@ -19,12 +19,20 @@
 }
 
 .text h2 {
-    font-size: 28px;
+    font-size: 30px;
 }
 
-.text p {
-    font-size: 24px;
+/* .text input {
+    font-size: 28px;
+    color: black;
+} */
+.text textarea {
+    font-size: 24px; 
 }
+
+/* .text p {
+    font-size: 24px;
+} */
 
 .TBS-Box {
     height: 60px;
@@ -50,4 +58,9 @@
     width: 85px;
     height: 85px;
     position: sticky;
+}
+
+.photo {
+    width: 100px;
+    height: 100px;
 }

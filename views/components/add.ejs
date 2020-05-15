@@ -1,15 +1,32 @@
 <div class="add-Box">
     <div class="add-Inner">
         <div class="add-Fnct">
-            <img src="/styles/images/picture.png">
-        </div> 
+            <div class="image-upload">
+              
+                <label for="file-input">
+                    <img src="/styles/images/picture.png" />
+                </label>
+
+                <input id="file-input" type="file" onchange="readURL(this);" />
+            </div>
+
+        </div>
         <div class="add-Divider"></div>
         <div class="add-Fnct">
-            <img src="/styles/images/pdf.png">
+            <!-- <img src="/styles/images/pdf.png"> -->
+            <div class="image-upload">
+              
+                <label for="file-input">
+                    <img src="/styles/images/pdf.png" />
+                </label>
+
+                <input id="file-input" type="file" onchange="readURL(this);" />
+            </div>
+
         </div>
         <div class="add-Divider"></div>
         <div class="add-Fnct">
             <img src="/styles/images/list.png">
-        </div> 
+        </div>
     </div>
 </div>

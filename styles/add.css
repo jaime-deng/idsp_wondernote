@@ -27,5 +27,7 @@
     margin: 0 15px;
 }
 
-
+.image-upload>input {
+    display: none;
+  }
 

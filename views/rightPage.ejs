@@ -16,36 +16,82 @@
         <!-- <NightMode /> -->
         <%- include('components/nightmode')%>
     </div>
-<br>
+    <br>
 
-    <div class="text">
-        <Header />
-        <h2>Note Subheader</h2>
-        <p>To be more specific, a richard is the kettle of an action. The joke of a slope becomes a labrid country.
-            Authors often misinterpret the brow as a lipless printer, when in actuality it feels more like a strapless
-            taiwan. The literature would have us believe that an acorned brandy is not but a valley. Woodless xylophones
-            show us how walruses can be refunds. They were lost without the unbought hardcover that composed their
-            taste.
-            <br />
-            <br />
-            Framed in a different way, the strongish typhoon comes from a squeaky bassoon. An examination sees a lizard
-            as an unnamed store. Some assert that an income sees a cushion as a crimpy lathe. Though we assume the
-            latter, a twilight sees a revolver as a combless helium. An uncooked hair is a soprano of the mind. The
-            tergal trade comes from a crestless helium.
-            <br />
-            <br />
-            The literature would have us believe that a qualmish angle is not but an oxygen. One cannot separate
-            protests from obtect hammers. Some pinpoint conifers are thought of simply as biplanes. Some assert that a
-            cause is a bobcat from the right perspective. Authors often misinterpret the honey as a zincoid pumpkin,
-            when in actuality it feels more like a defunct spider. Though we assume the latter, the gelded tent reveals
-            itself as an ungrudged plier to those who look.
-            <br>
-        </p>
-    </div>
+    <form>
+        <div class="text">
+            <Header />
+            <h2> <textarea class="form-control" id="text" rows="1" placeholder="Note Title"></textarea></h2>
 
-    <div class="button">
-        <div class="Btn-Box addNew">
-            <div><img class="Btn-Icon" src="/styles/images/plus.png" alt="addNew"></div>
+            <p>
+                <textarea class="form-control" id="text2" rows="10"></textarea>
+            </p>
+
         </div>
-    </div>
+
+     
+            <img class="photo" id="blah" src="#" alt="" />
+     
+
+        <div class="button">
+            <div class="Btn-Box addNew">
+                <div>
+                    <!-- <img class="Btn-Icon" src="/styles/images/plus.png" alt="addNew"> -->
+                    <input class="Btn-Icon" type="image" src="/styles/images/plus.png" border="0" alt="Submit" />
+                </div>
+
+            </div>
+        </div>
+
+    </form>
 </div>
+
+<script>
+    // save notes function
+    window.onbeforeunload = function () {
+        $('textarea').each(function () {
+            var id = $(this).attr('id');
+            var value = $(this).val();
+            localStorage.setItem(id, value);
+        });
+    }
+    window.onload = function () {
+        $('textarea').each(function () {
+            var id = $(this).attr('id');
+            var text2 = localStorage.getItem(id);
+            if (text2 !== null) $('#' + id).val(text2);
+        });
+    }
+
+    // add picture
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(300)
+                    .height(300);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    // add file
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#file')
+                    .attr('src', e.target.result)
+                    .width(300)
+                    .height(300);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
