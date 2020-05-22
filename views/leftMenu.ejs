@@ -1,18 +1,21 @@
 <div class="Left-Menu">
     <div class="Profile">
 
-        <div class="Btn-Box avatar">
-            <div><img class="Btn-Icon" src="/styles/images/user.png" alt="profile-image"></div>
-        </div>
+        <a href="profile">
+
+            <div class="Btn-Box avatar">
+                <div><img class="Btn-Icon" src="/styles/images/user.png" alt="profile-image"></div>
+            </div>
+        </a>
 
         <div class="header">
-            <h1>User1</h1>
+            <h1><%=name%></h1>
         </div>
 
     </div>
     <br>
-    
-    
+
+
 
     <div class="Search-Bar">
         <!-- <Searchbar /> -->
@@ -49,39 +52,6 @@
             </div>
         </div>
 
-        <!-- <div class="Category-Expanded">
-            <div class="Category-Above">
-                <div class="Category-Box">
-                    <div class="Category-Box-Inner"> -->
-                        <!-- To-do's -->
-                        <!-- <div class="Note text">
-                            <div class="Note-Date">
-                                <div class="Note-Title">
-                                    Note Title
-                                </div>
-                                <div class="Date-Created">
-                                    12.07.2020 - 12:00
-                                </div>
-                            </div>
-
-                            <div class="Note-Preview">Note preview text...</div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div class="Under-Category"> -->
-            <!-- <UnderCategory /> -->
-            <!-- <%- include('components/notes')%> -->
-            <!-- 
-                <div class="Expand-Button">
-                    <!-- <Expand /> -->
-            <!-- <div class="Btn-Box expand">
-                        <div><img class="Btn-Icon" src="/styles/images/plus.png" alt="star"></div>
-                    </div> -->
-
-            <!-- </div> -->
-            <!-- </div> -->
-        <!-- </div> -->
     </div>
     <div class="Fav-Del">
         <!-- <Favorite /> -->
@@ -103,8 +73,8 @@
 
 
 <script>
-     //delete note
-     function eraseText() {
+    //delete note
+    function eraseText() {
         document.getElementById("text2").value = "";
         document.getElementById("text").value = "";
         document.getElementById('blah').style.display = 'none';

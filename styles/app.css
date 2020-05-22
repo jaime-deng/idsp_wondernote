@@ -1,3 +1,10 @@
 .App {
     display: flex;
 }
+
+
+@media all and (max-width: 768px) {
+   body {
+       color: red;
+   }
+}

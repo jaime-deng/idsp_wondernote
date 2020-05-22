@@ -19,18 +19,26 @@
     <br>
 
     <form>
-        <div class="text">
-            <Header />
+        <div class="text form-group shadow-textarea">
+          
             <h2> <textarea class="form-control" id="text" rows="1" placeholder="Note Title"></textarea></h2>
 
-            <p>
-                <textarea class="form-control" id="text2" rows="10"></textarea>
-            </p>
+           
+                <textarea class="form-control" id="text2" rows="10">
+                </textarea>
+           
 
         </div>
 
+        <div id="frameBorder">
+            <div id="draggableHelper" style="display:inline-block">
+                <div id="image">
+                    <img class="photo" id="blah" src="#" alt="" onclick="eraseImg();"/>
+                </div>
+            </div>
+        </div>
 
-        <img class="photo" id="blah" src="#" alt="" />
+
 
 
         <div class="button">
@@ -44,6 +52,7 @@
         </div>
 
     </form>
+    
 </div>
 
 <script>
@@ -79,6 +88,11 @@
         }
     }
 
+    // erase image
+    function eraseImg() {
+        document.getElementById('blah').style.display = 'none';
+    }
+
     // add file
     // function readURL(input) {
     //     if (input.files && input.files[0]) {
@@ -95,5 +109,9 @@
     //     }
     // }
 
-
+    // dark mode
+    // function myFunction() {
+    //     var element = document.body;
+    //     element.classList.toggle("dark-mode");
+    // }
 </script>

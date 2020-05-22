@@ -60,7 +60,7 @@ module.exports = () => {
     app.use(methodOverride('_method'))
 
     app.get('/home', checkAuthenticated, (req, res) => {
-        res.render('app', {name: "name"})
+        res.render('app', {name: req.user.name})
     })
 
     app.get('/', checkNotAuthenticated, (req, res) => {
@@ -93,10 +93,23 @@ module.exports = () => {
         }
     })
 
+    app.get('/profile', checkAuthenticated, (req, res) => {
+        res.render('profile', {
+            name: req.user.name,
+            email: req.user.email,
+            id: req.user.id
+        })
+    })
+
+    app.get('/help', checkAuthenticated, (req, res) => {
+        res.render('help')
+    })
+
     app.delete('/logout', (req, res) => {
         req.logOut()
         res.redirect('/')
     })
+
 
     // checkers
     function checkAuthenticated(req, res, next) {
@@ -115,13 +128,6 @@ module.exports = () => {
         }
     }
 
-    // app.get('/temp', (req, res) => {
-    //     res.render('app', {name: "Jane"})
-    // })
 
-    // app.get('/leftSide', (req, res) => {
-    //     res.render('leftMenu', {name: req.user.name}, {text: "reminders"})
-    // })
-    // console.log(req.users.name)
     return app;
 }

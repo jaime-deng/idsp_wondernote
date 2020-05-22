@@ -26,8 +26,9 @@
     font-size: 28px;
     color: black;
 } */
+
 .text textarea {
-    font-size: 24px; 
+    font-size: 24px;
 }
 
 /* .text p {
@@ -64,4 +65,76 @@
     width: 100px;
     height: 100px;
 }
+
+
+
+@media (min-width: 576px) { 
+    .rightpage {
+        background-color: #FFFFFF;
+        width: 1150px;
+        height: 980px;
+        padding: 50px;
+    }
+    
+    .toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .button {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        margin: 100px;
+    }
+    
+    .text h2 {
+        font-size: 30px;
+    }
+    
+    /* .text input {
+        font-size: 28px;
+        color: black;
+    } */
+    
+    .text textarea {
+        font-size: 24px;
+    }
+    
+    /* .text p {
+        font-size: 24px;
+    } */
+    
+    .TBS-Box {
+        height: 60px;
+        width: fit-content;
+        border-radius: 15px;
+        padding: 0 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .TBS-Inner {
+        cursor: pointer;
+    }
+    
+    .TBS-Inner::selection {
+        background: none;
+        color: none;
+    }
+    
+    .addNew {
+        background-color: #73a6fc;
+        width: 85px;
+        height: 85px;
+        position: sticky;
+    }
+    
+    .photo {
+        width: 100px;
+        height: 100px;
+    }
+ }
 
