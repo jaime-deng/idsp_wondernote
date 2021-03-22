@@ -1,55 +1,47 @@
 <div class="rightpage">
-    <div class="toolbar">
-        <!-- <Add /> -->
-        <%- include('components/add')%>
-        <!-- <Colors /> -->
-        <%- include('components/colors')%>
-        <!-- <CharacterFeatures /> -->
-        <%- include('components/characterFeatures')%>
-        <!-- <ToolbarSingle text="12 ▾" /> -->
-        <div class="TBS-Box">
-            <div class="TBS-Inner">12 ▾</div> <!-- drop down-->
-        </div>
-
-        <!-- <Alignment /> -->
-        <%- include('components/alignment')%>
-        <!-- <NightMode /> -->
-        <%- include('components/nightmode')%>
-    </div>
-    <br>
-
+    <h1>Welcome to the notes app!</h1>
+    <form action="/logout?_method=DELETE" method="POST">
+        <button class="btn btn-primary btn-lg" type="submit">Log Out</button>
+    </form>
+    <hr>
+    <button type="submit">SAVE</button>
+    <hr>
     <form>
         <div class="text form-group shadow-textarea">
           
-            <h2> <textarea class="form-control" id="text" rows="1" placeholder="Note Title"></textarea></h2>
-
-           
-                <textarea class="form-control" id="text2" rows="10">
+             <p>Notes</p> <textarea class="form-control" id="text" rows="4"></textarea>
+            <br />
+            <p>Todo List</p>
+                <textarea class="form-control" id="text2" rows="4">
                 </textarea>
-           
+                <br />
+                <br />
+                <br />
+                <%- include('components/add')%>
+                <br />
 
         </div>
 
         <div id="frameBorder">
             <div id="draggableHelper" style="display:inline-block">
                 <div id="image">
-                    <img class="photo" id="blah" src="#" alt="" onclick="eraseImg();"/>
+                    <img class="photo" id="blah" src="#" alt=""/>
+                    <button onclick="eraseImg();">delete</button>
                 </div>
             </div>
         </div>
 
-
-
-
-        <div class="button">
-            <div class="Btn-Box addNew">
-                <div>
-                    <!-- <img class="Btn-Icon" src="/styles/images/plus.png" alt="addNew"> -->
-                    <input class="Btn-Icon" type="image" src="/styles/images/plus.png" border="0" alt="Submit" />
-                </div>
-
-            </div>
-        </div>
+        <br />
+        <p>Websites</p>
+        <input type="text" id="txt_1" onkeyup='saveValue(this);'/> 
+        <br />
+        <input type="text" id="txt_2" onkeyup='saveValue(this);'/> 
+        <br />
+        <input type="text" id="txt_2" onkeyup='saveValue(this);'/>
+        <br />
+        <input type="text" id="txt_2" onkeyup='saveValue(this);'/>
+        <br />
+        <br />
 
     </form>
     
@@ -71,6 +63,7 @@
             if (text2 !== null) $('#' + id).val(text2);
         });
     }
+
 
     // add picture
     function readURL(input) {
@@ -114,4 +107,26 @@
     //     var element = document.body;
     //     element.classList.toggle("dark-mode");
     // }
+    
+</script>
+
+<script type="text/javascript">
+    document.getElementById("txt_1").value = getSavedValue("txt_1");    // set the value to this input
+    document.getElementById("txt_2").value = getSavedValue("txt_2");   // set the value to this input
+    /* Here you can add more inputs to set value. if it's saved */
+
+    //Save the value function - save it to localStorage as (ID, VALUE)
+    function saveValue(e){
+        var id = e.id;  // get the sender's id to save it . 
+        var val = e.value; // get the value. 
+        localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+    }
+
+    //get the saved value function - return the value of "v" from localStorage. 
+    function getSavedValue  (v){
+        if (!localStorage.getItem(v)) {
+            return "";// You can change this to your defualt value. 
+        }
+        return localStorage.getItem(v);
+    }
 </script>

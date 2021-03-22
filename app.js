@@ -44,7 +44,7 @@ module.exports = () => {
     name: 'User',
     email: 'user@gmail.com',
     password:
-     '$2b$10$HhvTCz9ob8o2SqqAE3ktyufB.AmZMihtAqpXFlP0QAqujFJiNmb4a' }]
+     '123' }]
 
     app.set('view engine', 'ejs')
     app.set("views", __dirname + "/views")

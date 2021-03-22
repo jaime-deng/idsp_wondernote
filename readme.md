@@ -17,7 +17,7 @@ Wondernote ia a note taking app that makes creating notes simple yet powerful.
 ## Deployment
 
 - Deployed with Heroku
-- Find the app [here](https://github.com/jaime-deng/idsp_wondernote)
+- Find the app [here](https://wondernote-idsp.herokuapp.com)
 
 ## Built With
 
